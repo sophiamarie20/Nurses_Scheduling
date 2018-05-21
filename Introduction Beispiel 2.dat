@@ -1,0 +1,28 @@
+/*********************************************
+ * OPL 12.8.0.0 Data
+ * Author: Sophias Surface
+ * Creation Date: 16.05.2018 at 08:34:26
+ *********************************************/
+
+ //Anzahl der Cargos und Abteilungen
+ 
+ n=4;
+ m=3;
+ 
+ //Datenanbindung des Excel-Sheets
+ 
+ SheetConnection my_sheet ("Daten Cargos und Compartements.xlsx") ;
+ 
+ // Parameter der Cargos
+ 
+ profit from SheetRead (my_sheet, "profit");
+ weight from SheetRead (my_sheet, "weight");
+ volume from SheetRead (my_sheet, "volume");
+ 
+ // Parameter der Abteilungen
+ 
+ weight_cap from SheetRead (my_sheet, "weight_cap");
+ space_cap from SheetRead (my_sheet, "space_cap");
+ 
+ x to SheetWrite (my_sheet, "results") ;
+ 
